@@ -1,0 +1,15 @@
+---
+# The robots rules
+# v2.0
+# https://github.com/vikassri
+# © 2012-2020 Vikas Srivastava
+# MIT License
+layout: null
+permalink: robots.txt
+---
+
+User-agent: *
+
+Disallow: /norobots/
+
+Sitemap: {{ site.url | append: site.baseurl }}/sitemap.xml
