@@ -6,8 +6,8 @@
 
 - name: Home
   icon: "fas fa-home"
-- name: "Resume"
-  icon: "fas"
+- name: Resume
+  icon: "fas fa-resume"
   path: resume
 - name: Categories
   icon: "fas fa-stream"
