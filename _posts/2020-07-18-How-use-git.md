@@ -6,6 +6,7 @@ category: [Technology, git]
 author: Vikas Srivastava
 tags: [technology, git]
 summary: How to use multiple git account from system
+pin: true
 ---
 
 Today, we are going to see how we can use multiple git account from same computer. Generally we have only one account in github, where we keep all our stuff which we do but sometime we need have two accounts to access from same system. It is required when you have your own personal and official account on github and you want to use both of them from same system.
