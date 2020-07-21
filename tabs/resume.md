@@ -4,4 +4,4 @@ title: Resume
 # MIT License
 ---
 
-You can visit: [here](https://vikassri.in/resume) or download [doc](../Vikas_Hadoop_Architect.doc) or [pdf](../Vikas_Hadoop_Architect.pdf)  
+You can visit: [here](https://vikassri.in/resume) or download [doc](../../docs/Vikas_Hadoop_Architect.doc) or [pdf](../../docs/Vikas_Hadoop_Architect.pdf)  
