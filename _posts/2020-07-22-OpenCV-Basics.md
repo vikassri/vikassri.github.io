@@ -10,38 +10,41 @@ summary: Basics of OpenCV
 
 OpenCV is OpenSource Computer Vision Library, which helps in reconizing images/videos using pythona and other languages. I will start with basics of computer vision. In This Blog we will be doing lots of hands on coding. I will be adding self explainatory code.
 
-## Types of Resolution
-```bash
-VGA = 640x480   (640 pixel in width and 480 pixels in height)
-HD = 1280x720
-FHD = 1920x1080
-4K  = 3840x2160
-```
-## Types of Images
+## **Types of Resolution**
 
-##### Binary Images
+| Type | Resolution  |
+| ---- | :---------: |
+| VGA  |  640 x 480  |
+| HD   | 1280 x 720  |
+| FHD  | 1920 x 1080 |
+| 4K   | 3840 x 2160 |
+
+## **Types of Images**
+
+##### **Binary Images**
 Binary Image consist of two colors black and white, We can also denote these two with 0's and 1's where 0 being white and 1 is black.
 
-##### Gray Images
+##### **Gray Images**
 Gray Image consist of gray scale, Which is from 0-256. These are the levels of colors.
 
-##### Color Images
-Color Image consist of three colors Red, Green and Blue. So wheneven we see any color images its not single layer but three layers of color.
+##### **Color Images**
+Color Image consist of three colors *Red*, *Green* and *Blue*. So wheneven we see any color images its not single layer but three layers of color.
 
 ```python
 Color images in VGA will have
 RBG VGA = 3 * 640 * 480 (pixels) 
 ```
 
-## Examples Code
-##### Requirement
+## **Examples Code**
+
+#### **Requirement**
 Before starting code we need to install few of python module, Below are the modules, I hope you already have basic understanding of python.
 ```bash
 conda install opencv
 conda install numpy 
 ```
 
-##### Reading Image
+#### **Reading Image**
 Reading a simple images required few things image, `Cv2 module`
 ```python
 import os, sys
@@ -63,7 +66,7 @@ cv2.waitKey(5000)
 cv2.destroyAllWindows()
 ```
 
-##### Reading Video
+#### **Reading Video**
 Reading a video is little different from reading the image as in Image we use imread function to read but in video we need to use videocapture. We need to understand how video works in system.
 
 Video is nothing but mutiple images running in continoues loop, Each image is a frame and have some properties attached to it. Let's see the code to see the video
@@ -107,7 +110,7 @@ if __name__ == "__main__":
     showVideo(video)
 ```
 
-##### Reading WebCam
+#### **Reading WebCam**
 Reading video is pretty much similar as reading using webcam or laptop cam, All you need to do is to find the reference of your camera. Generally its `0` if it's your laptop or webcam and `1` if you have secondary camera attached to your system
 
 ```python
