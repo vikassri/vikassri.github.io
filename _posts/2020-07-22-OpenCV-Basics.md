@@ -8,7 +8,7 @@ tags: [OpenCV, python, Cv2]
 summary: Basics of OpenCV
 ---
 
-OpenCV is OpenSource Computer Vision Library, which helps in reconizing images/videos using pythona and other languages. I will start with basics of computer vision. In This Blog we will be doing lots of hands on coding. I will be adding self explainatory code.
+OpenCV is OpenSource Computer Vision Library, which helps in reconizing images/videos using python and other languages. I will start with basics of computer vision. In This Blog we will be doing lots of hands on coding. I will be adding self explainatory code comments.
 
 ## **Types of Resolution**
 
@@ -35,7 +35,7 @@ Color images in VGA will have
 RBG VGA = 3 * 640 * 480 (pixels) 
 ```
 
-## **Examples Code**
+## **Example Codes**
 
 #### **Requirement**
 Before starting code we need to install few of python module, Below are the modules, I hope you already have basic understanding of python.
