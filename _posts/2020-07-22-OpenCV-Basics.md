@@ -2,9 +2,9 @@
 layout: post
 title: OpenCV Basics
 date: 2020-07-22 16:04
-category: [techology, OpenCV]
+category: [Techology, OpenCV]
 author: Vikas Srivastava
-tags: [techology, OpenCV, python]
+tags: [OpenCV, python, Cv2]
 summary: Basics of OpenCV
 ---
 
