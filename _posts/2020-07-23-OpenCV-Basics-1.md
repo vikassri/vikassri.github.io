@@ -1,6 +1,6 @@
 ---
 layout: post
-title: OpenCV Basic-1
+title: OpenCV Basics-1
 date: 2020-07-23 21:00
 category: [Technology, OpenCV]
 author: Vikas Srivastava
