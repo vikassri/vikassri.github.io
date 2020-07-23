@@ -13,7 +13,6 @@ In this blog, I will be doing some more basics of OpenCV. Below are the topics w
 2. Image Wrap Perspective
 3. Image Joining
 4. Croping and Resizing
-5. Color dedection and HSV 
 
 ## **Requirement**
 As I have aready discussed in previous [blog](../../posts/OpenCV-Basics), We need only below packages, If you dont have Anaconda install on your system. You can check [Installation](https://docs.anaconda.com/anaconda/install/) and [download](https://www.anaconda.com/products/individual) anaconda. 
@@ -114,21 +113,12 @@ Images joining is actually very easy when you have images of same type like RGB 
 | ------------------------------- | :------------------------------: | :-----------------------------: |
 | ![img](../../resource/bird.jpg) | ![img](../../resource/birdg.jpg) | ![img](../../resource/bird.jpg) |
 
-First case will join only colored one
+First, We will stack only colored images togethers and for this we will be using numpy for stacking horizontal and vertical.
 
 ```python
 import cv2
 import numpy as np
-"""
-We will be joining the images into horizontal and vertical stack
 
-Requirement:
-All the images should be of same channel and format like RBG, Gray or BW
-
-Solution:
-Before stacking we can convert them into same channel stack it
-
-"""
 # reading the image
 img1 = cv2.imread('Resources/img1.jpg')
 img2 = cv2.imread('Resources/img2.jpg')
