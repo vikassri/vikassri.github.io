@@ -38,7 +38,7 @@ RBG VGA = 3 * 640 * 480 (pixels)
 ## **Example Codes**
 
 #### **Requirement**
-Before starting code we need to install few of python module, Below are the modules, I hope you already have basic understanding of python.
+Before starting code we need to install few of python module, Below are the modules, I hope you already have basic understanding of python. You can check [Installation](https://docs.anaconda.com/anaconda/install/) and [download](https://www.anaconda.com/products/individual) anaconda.
 ```bash
 conda install opencv
 conda install numpy 

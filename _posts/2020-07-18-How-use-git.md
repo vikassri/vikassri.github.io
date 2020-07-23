@@ -1,6 +1,6 @@
 ---
 layout: post
-title: How to use multiple Git Account on mac
+title: How to use multiple git account on mac
 date: 2020-07-18 12:44
 category: [Technology, github]
 author: Vikas Srivastava
