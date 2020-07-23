@@ -15,7 +15,7 @@ In this blog, I will be doing some more basics of OpenCV. Below are the topics w
 4. Croping and Resizing
 
 ## **Requirement**
-As I have aready discussed in previous [blog](../../posts/OpenCV-Basics), We need only below packages, If you dont have Anaconda install on your system. You can check [Installation](https://docs.anaconda.com/anaconda/install/) and [download](https://www.anaconda.com/products/individual) anaconda. 
+As I have aready discussed in previous [blog](../../posts/OpenCV-Basics), We need only below packages, If you dont have Anaconda install on your system. You can check [Installation](https://docs.anaconda.com/anaconda/install/){:target="_blank"} and [download](https://www.anaconda.com/products/individual){:target="_blank"} anaconda. 
 
 ```bash
 conda install opencv
