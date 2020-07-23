@@ -1,6 +1,6 @@
 ---
 layout: post
-title: OpenCV Chapter 1
+title: OpenCV Basic-1
 date: 2020-07-23 21:00
 category: [Technology, OpenCV]
 author: Vikas Srivastava
@@ -16,7 +16,7 @@ In this blog, I will be doing some more basics of OpenCV. Below are the topics w
 5. Color dedection and HSV 
 
 ## **Requirement**
-As I have aready discussed in previous [blog](./2020-07-22-OpenCV-Basics.md), We need only below packages, If you dont have Anaconda install on your system. You can check [Installation](https://docs.anaconda.com/anaconda/install/) and [download](https://www.anaconda.com/products/individual) anaconda. 
+As I have aready discussed in previous [blog](../../posts/OpenCV-Basics), We need only below packages, If you dont have Anaconda install on your system. You can check [Installation](https://docs.anaconda.com/anaconda/install/) and [download](https://www.anaconda.com/products/individual) anaconda. 
 
 ```bash
 conda install opencv
@@ -32,7 +32,7 @@ import cv2
 import numpy as np
 
 # load the images
-img = cv2.imread("Resources/bird.jpg",)
+img = cv2.imread("img1.jpg",)
 
 # Convert the image into gray scale
 imgGray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
@@ -66,24 +66,16 @@ cv2.waitKey(10000)
 cv2.destroyAllWindows()
 ```
 
-![Image](../resource/functions.jpg)
+![Image](../../resource/functions.jpg)
 
 ## **Image Wrap Perspective**
 
 Wrap Perspective Actually helps in setting up the perspective of image, suppose you have a tilted image, which is difficult to map and compare like below. If we want run comparision or deduction it will be difficult in this case but after using wrapPerspective function it will be in required format lets see the code.
 
-| Input                             |             Output             |
-| --------------------------------- | :----------------------------: |
-| ![image](../resource/k_cards.jpg) | ![image](../resource/wrap.jpg) |
+| Input                                |              Output               |
+| ------------------------------------ | :-------------------------------: |
+| ![image](../../resource/k_cards.jpg) | ![image](../../resource/wrap.jpg) |
 
-```
-Syntax: cv2.warpPerspective(src, dst, dsize)
-
-Parameters:
-->src: Source Image
-->dst: output image that has the size dsize and the same type as src.
-->dsize: size of output image
-```
 ```Python
 import cv2
 import numpy as np
@@ -118,11 +110,12 @@ cv2.destroyAllWindows()
 ## **Image Joining**
 Images joining is actually very easy when you have images of same type like RGB or only grayscale, But it will not work easily when you have different images if different channels
 
-| img1                         |             img2              |             img2             |
-| ---------------------------- | :---------------------------: | :--------------------------: |
-| ![img](../resource/bird.jpg) | ![img](../resource/birdg.jpg) | ![img](../resource/bird.jpg) |
+| img1                            |               img2               |              img2               |
+| ------------------------------- | :------------------------------: | :-----------------------------: |
+| ![img](../../resource/bird.jpg) | ![img](../../resource/birdg.jpg) | ![img](../../resource/bird.jpg) |
 
 First case will join only colored one
+
 ```python
 import cv2
 import numpy as np
@@ -157,9 +150,11 @@ cv2.waitKey(10000)
 # destroy all the image windows
 cv2.destroyAllWindows()
 ```
-| output1                       |            outpu2             |
-| ----------------------------- | :---------------------------: |
-| ![img](../resource/hbird.jpg) | ![img](../resource/vbird.jpg) |
+
+| output1                          |             output2              |
+| -------------------------------- | :------------------------------: |
+| ![img](../../resource/hbird.jpg) | ![img](../../resource/vbird.jpg) |
+
 
 But still there is Issue while adding the gray and color image, but I have written a simple funtion to covert it and add it, lets see the example.
 
@@ -207,7 +202,7 @@ if __name__ == '__main__':
     # Call the function
     stackImages([img, img2, img3])
 ```
-![img](../resource/hbirdg.jpg)
+![img](../../resource/hbirdg.jpg)
 
 ## **Croping and Resizing**
 
