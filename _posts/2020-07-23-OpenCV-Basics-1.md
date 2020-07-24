@@ -65,15 +65,15 @@ cv2.waitKey(10000)
 cv2.destroyAllWindows()
 ```
 
-![Image](../../resource/functions.jpg)
+![Image](../../resource/opencv/functions.jpg)
 
 ## **Image Wrap Perspective**
 
 Wrap Perspective Actually helps in setting up the perspective of image, suppose you have a tilted image, which is difficult to map and compare like below. If we want run comparision or deduction it will be difficult in this case but after using wrapPerspective function it will be in required format lets see the code.
 
-| Input                                |              Output               |
-| ------------------------------------ | :-------------------------------: |
-| ![image](../../resource/k_cards.jpg) | ![image](../../resource/wrap.jpg) |
+| Input                                       |                  Output                  |
+| ------------------------------------------- | :--------------------------------------: |
+| ![image](../../resource/opencv/k_cards.jpg) | ![image](../../resource/opencv/wrap.jpg) |
 
 
 ```python
@@ -113,9 +113,9 @@ cv2.destroyAllWindows()
 ## **Image Joining**
 Images joining is actually very easy when you have images of same type like RGB or only grayscale, But it will not work easily when you have different images if different channels
 
-| img1                            |               img2               |              img2               |
-| ------------------------------- | :------------------------------: | :-----------------------------: |
-| ![img](../../resource/bird.jpg) | ![img](../../resource/birdg.jpg) | ![img](../../resource/bird.jpg) |
+| img1                                   |                  img2                   |                  img2                  |
+| -------------------------------------- | :-------------------------------------: | :------------------------------------: |
+| ![img](../../resource/opencv/bird.jpg) | ![img](../../resource/opencv/birdg.jpg) | ![img](../../resource/opencv/bird.jpg) |
 
 First, We will stack only colored images togethers and for this we will be using numpy for stacking horizontal and vertical.
 
@@ -145,9 +145,9 @@ cv2.waitKey(10000)
 cv2.destroyAllWindows()
 ```
 
-| output1                          |             output2              |
-| -------------------------------- | :------------------------------: |
-| ![img](../../resource/hbird.jpg) | ![img](../../resource/vbird.jpg) |
+| output1                                 |                 output2                 |
+| --------------------------------------- | :-------------------------------------: |
+| ![img](../../resource/opencv/hbird.jpg) | ![img](../../resource/opencv/vbird.jpg) |
 
 
 But still there is Issue while adding the gray and color image, but I have written a simple funtion to covert it and add it, lets see the example.
@@ -196,7 +196,7 @@ if __name__ == '__main__':
     # Call the function
     stackImages([img, img2, img3])
 ```
-![img](../../resource/hbirdg.jpg)
+![img](../../resource/opencv/hbirdg.jpg)
 
 ## **Croping and Resizing**
 
@@ -207,7 +207,7 @@ import cv2
 import numpy as np
 
 # Reading the image
-img = cv2.imread("Resources/lamb.jpg")
+img = cv2.imread("lamb.jpg")
 
 ######################  IMAGE RESIZE #################
 # find the size of the images
