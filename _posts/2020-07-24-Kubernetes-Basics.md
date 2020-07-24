@@ -8,7 +8,9 @@ tags: [Kubernetes, K8s, Kube]
 summary: Basics of Kubernetes 
 ---
 
-Today, I am writing about Kubernetes Architecture/Concepts and Best Practices. Kubernetes became very popular after the evolution of [microservices](https://microservices.io/){:target="_blank"} and companies started moving away from monolithic architecture. 
+Today, I am writing about Kubernetes Architecture/Concepts and Best Practices. Kubernetes became very popular after the evolution of [microservices](https://microservices.io/){:target="_blank"} and most of the startup companies started moving away from monolithic architecture. 
+
+Indetail you can read official document, As per [official document](https://kubernetes.io/docs/concepts/overview/what-is-kubernetes/){:targe="_blank"} ``` Kubernetes is an open-source system for automating deployment, scaling, and management of containerized applications ```
 
 **Topics** 
 * Kubernetes Architecture
@@ -18,6 +20,10 @@ Today, I am writing about Kubernetes Architecture/Concepts and Best Practices. K
 
 
 ## **Kubernetes Architecture** #
+
+![kuber](../../resource/k8s/kube_arch.jpg)
+
+*Img Source: Google* 
 
 #### **Master**
   - **Api Server**: Receives api request for modification, talk to etcd cluster of metadata requests
