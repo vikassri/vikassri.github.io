@@ -75,10 +75,12 @@ Wrap Perspective Actually helps in setting up the perspective of image, suppose 
 | ------------------------------------ | :-------------------------------: |
 | ![image](../../resource/k_cards.jpg) | ![image](../../resource/wrap.jpg) |
 
-```Python
+
+```python
 import cv2
 import numpy as np
 
+#reading the image
 img = cv2.imread('Resources/k_cards.jpg')
 
 # set the width and height of perspective
@@ -106,6 +108,8 @@ cv2.waitKey(10000)
 # destroy all the image windows
 cv2.destroyAllWindows()
 ```
+
+
 ## **Image Joining**
 Images joining is actually very easy when you have images of same type like RGB or only grayscale, But it will not work easily when you have different images if different channels
 
