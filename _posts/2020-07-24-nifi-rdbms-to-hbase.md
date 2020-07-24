@@ -8,7 +8,7 @@ tags: [Nifi, Hbase, Mysql, Postgres]
 summary: Nifi flow for ETL from RDBMS to Hbase
 ---
 
-This is going to be intresting as I will be doing the ETL between RDBMS(mysql/Postgres) to Hbase. Nowadays there are many Options to do the Data Movement from source to destination but my favourate is [Nifi](https://nifi.apache.org/){:target="_blank"} . I will not be tell how to set up cluster or RDBMS in this blog. Will write seperate one to set up the cluster/nifi and RDMS.
+This is going to be intresting as I will be doing the ETL between RDBMS(mysql/Postgres) to Hbase. Nowadays there are many Options to do the Data Movement from source to destination but my favourate is [Nifi](https://nifi.apache.org/){:target="_blank"}. I will not be tell how to set up cluster or RDBMS in this blog. Will write seperate one to set up the cluster/nifi and RDMS.
 
 **Requirement**
 1. Hadoop Cluster (HDP/CDH/CDP)
@@ -43,7 +43,7 @@ Nifi and RDBMS connection happened in first processor `ListDatabase Tables`, You
 
 ![list db](../../resource/nifi/lstdb.jpg)
 
-Add below propertie in `CONTROLLER SERVICES` for mysql connection pool.
+Add below properties in `CONTROLLER SERVICES` for mysql connection pool.
 
 ```bash
 Database Connection URL: jdbc:mysql://localhost:3306/customer_data
@@ -54,12 +54,12 @@ Password: root
 ```
 
 Another Processor is `Generate TableFetch`, This we help in fetching the details of table passed from `ListDatabase Tables` processor. You can see `Table Name` parameter which is coming from previous processor as well. Parameters which we need to set are below
-- ${db.table.name}    (table name coming from previous processor)
+- ${db.table.name} (table name coming from previous processor)
 - ${max_value_column} (you can provide max column value like id or something) 
 
 ![fetchtable](../../resource/nifi/fetch_table.jpg)
 
-Next Processor is `Extract Text`, It helps in extracting the text from the `Generate TableFetch` flow files and convert them into attributes. You need to add a `Property` with below values
+Next Processor is `Extract Text`, It helps in extracting the text from `Generate TableFetch` flow files and convert them into attributes. You need to add a `Property` with below values
 
 | Name | value |
 | ---: | :---- |
@@ -110,7 +110,7 @@ Inserting data into hbase tables, using hbase connection pooling services, where
 | -------------------------: | :------------------------------------------------------------ |
 | Hadoop Configuration Files | /etc/hbase/conf/hbase-site.xml,/etc/hadoop/conf/core-site.xml |
 
-In the process all you need to do is adding the `Table Name`  , `Row Identifier` and `column family`. If you see above processor where i have created the hbase table we have column family as `cf` and Row Identifier should be unique for every row. So either you can give the `primary key` of the table or random id which is `UUID` to it.
+In the process all you need to do is adding the `Table Name`, `Row Identifier` and `column family`. If you see above processor where i have created the hbase table we have column family as `cf` and Row Identifier should be unique for every row. So either you can give the `primary key` of the table or random id which is `UUID` to it.
 
 |       property | value            |
 | -------------: | :--------------- |
