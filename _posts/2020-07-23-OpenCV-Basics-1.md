@@ -15,7 +15,7 @@ In this blog, I will be doing some more basics of OpenCV. Below are the topics w
 4. Croping and Resizing
 
 ## **Requirement**
-As I have aready discussed in previous [blog](../../posts/OpenCV-Basics), We need only below packages, If you dont have Anaconda install on your system. You can check [Installation](https://docs.anaconda.com/anaconda/install/){:target="_blank"} and [download](https://www.anaconda.com/products/individual){:target="_blank"} anaconda. 
+As I have aleady discussed in previous [blog](../../posts/OpenCV-Basics), We only need below packages, If you don't have Anaconda install on your system. You can check [Installation](https://docs.anaconda.com/anaconda/install/){:target="_blank"} and [download](https://www.anaconda.com/products/individual){:target="_blank"} anaconda. 
 
 ```bash
 conda install opencv
@@ -58,7 +58,7 @@ cv2.imshow("Edge Deducted Image", imgCanny)
 cv2.imshow("Dialated Image", imgDialtion)
 cv2.imshow("Erode Image", imgErode)
 
-# show the image for 5 seconds, 0 means undefinite
+# show the image for 5 seconds, 0 means indefinite
 cv2.waitKey(10000)
 
 # destroy all the image windows
@@ -117,7 +117,7 @@ Images joining is actually very easy when you have images of same type like RGB 
 | -------------------------------------- | :-------------------------------------: | :------------------------------------: |
 | ![img](../../resource/opencv/bird.jpg) | ![img](../../resource/opencv/birdg.jpg) | ![img](../../resource/opencv/bird.jpg) |
 
-First, We will stack only colored images togethers and for this we will be using numpy for stacking horizontal and vertical.
+First, We will stack only colored images together and for this we will use numpy for stacking horizontal and vertical.
 
 ```python
 import cv2
@@ -135,10 +135,10 @@ imgHorizontalStack = np.hstack((img1, img3))
 imgVerticalStack = np.vstack((img1, img3))
 
 # show image
-cv2.imshow("Hortizontal Stack Image", imgHorizontalStack)
+cv2.imshow("Horizontal Stack Image", imgHorizontalStack)
 cv2.imshow("Vertical Stack Image", imgVerticalStack)
 
-# show the image for 5 seconds, 0 means undefinite
+# show the image for 5 seconds, 0 means indefinite
 cv2.waitKey(10000)
 
 # destroy all the image windows
@@ -150,7 +150,7 @@ cv2.destroyAllWindows()
 | ![img](../../resource/opencv/hbird.jpg) | ![img](../../resource/opencv/vbird.jpg) |
 
 
-But still there is Issue while adding the gray and color image, but I have written a simple funtion to covert it and add it, lets see the example.
+But still there is Issue while adding the gray and color image, but I have written a simple function to covert it and add it, lets see the example.
 
 ```python
 import cv2
@@ -181,7 +181,7 @@ def stackImages(img_list=[], stack_type=0):
     # show the images
     cv2.imshow("Stacked Image", imgStack)
 
-    # show the image for 5 seconds, 0 means undefinite
+    # show the image for 5 seconds, 0 means indefinite
     cv2.waitKey(10000)
 
     # destroy all the image windows
@@ -198,9 +198,9 @@ if __name__ == '__main__':
 ```
 ![img](../../resource/opencv/hbirdg.jpg)
 
-## **Croping and Resizing**
+## **Cropping and Resizing**
 
-We Can do resizing and croping of images using below code. It required when you have big size image, which take lot of time to process. So these methods are usable to resize it.
+We can do resizing and cropping of images using below code. It required when you have big size image, which take lot of time to process. So these methods are usable to resize it.
 
 ```python
 import cv2

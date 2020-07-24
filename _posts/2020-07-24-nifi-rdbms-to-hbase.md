@@ -8,7 +8,7 @@ tags: [Nifi, Hbase, Mysql, Postgres]
 summary: Nifi flow for ETL from RDBMS to Hbase
 ---
 
-This is going to be intresting as I will be doing the ETL between RDBMS(mysql/Postgres) to Hbase. Nowadays there are many Options to do the Data Movement from source to destination but my favourate is [Nifi](https://nifi.apache.org/){:target="_blank"}. I will not be tell how to set up cluster or RDBMS in this blog. Will write seperate one to set up the cluster/nifi and RDMS.
+This is going to be interesting as I will be doing the data transfer between RDBMS(MySQL/Postgres) to Hbase. Nowadays there are many Options to do the Data Movement but my favorite is [Nifi](https://nifi.apache.org/){:target="_blank"}. I will not explain about setting up cluster or RDBMS in this blog. I Will write separate one to set up the cluster/nifi and RDMS.
 
 **Requirement**
 1. Hadoop Cluster (HDP/CDH/CDP)
@@ -21,7 +21,7 @@ This is going to be intresting as I will be doing the ETL between RDBMS(mysql/Po
 3. Nifi to Hbase Connection
 
 ## **Processor Selection**
-As we all know that nifi is full of processors and currently we have around 305+ processors, Which is much more than any other tool in this area. So let take a look.
+As we all know that nifi is full of processors and currently it has around 305+ processors, Which is much more than any other Opensource ETL tool. Lets take a look of full flow of nifi
 
 ![image](../../resource/nifi/nifi_full.jpg)
 
@@ -35,7 +35,7 @@ So as per the task I have to select the processors. I need below task to perform
 - Create the hbase table [**ExecuteStreamCommand**]
 - Put the data into hbase [**PutHbaseJson**]
 
-As you saw that i have used Eight processors in the flow and completed the data transfer along with data transformation. Lets go one by one with these processors
+As you saw that i have used Eight processors in the flow and completed the data transfer along with data transformation. Let's go one by one with these processors
 
 ## **Nifi and RDBS Connection**
 
@@ -65,7 +65,7 @@ Next Processor is `Extract Text`, It helps in extracting the text from `Generate
 | ---: | :---- |
 |  sql | ^(.*) |
 
-Once you add the above properties, we need something to execute the sql and get the results, so we need `executeSql` Processor, You can see here that we have used same property which we have added as SQL seclect Query and same connection string which we have already used in `list databases` and `generate fetchTable`
+Once you add the above properties, we need something to execute the sql and get the results, so we need `executeSql` Processor, You can see here that we have used same property which we have added as SQL select Query and same connection string which we have already used in `list databases` and `generate fetchTable`
 
 ![executesql](../../resource/nifi/execute_sql.jpg)
 
@@ -84,7 +84,7 @@ Now as we have converted the avro into json files, we need to split it into each
 
 ## **Nifi to Hbase connection** 
 
-After Spliting data into rows all we need to do is table where we can insert the data and we can do it by using below processor, It requires script to create table which will check if the table is already there or not if not it will create one. We need to keep it at some place on anynode and pass the values in processor
+After we split data into rows, All we need to do is table where we can insert the data. We can do create table by using below processor, It requires script to create table which will check if the table is already there or not if not it will create one. We need to keep it at some place on anynode and pass the values in processor
 
 ```bash
 #/bin/bash
