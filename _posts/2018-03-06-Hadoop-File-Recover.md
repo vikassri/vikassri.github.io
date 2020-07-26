@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Hadoop File Recover (after -skipTrash)
-date: 2020-07-26 22:16
+date: 2018-03-06 22:16
 category: [Technology, Hadoop]
 author: Vikas Srivastava
 tags: [hadoop, skipTrash, hdfs, delete]
