@@ -4,10 +4,16 @@ title: About Me
 # MIT License
 ---
 
-Ever since I was a kid, I was always very fasinated about the technology, Specially gadgets. Whenever I see some robot or any toy I used to think how its working, what is the technology behind it. I always stick around computers and spend hours to play game or do something, Apart from computer I loved playing `Cricket` and `T.T`. I was not so good with studies, well good enough to clear my exams :).
+Hello, Myself Vikas Srivastava. I am working as Bigdata Architect in one of the bigdata pioneer company. I have been taking care of Solution, Desiging and implementation of Bigdata Solutions and also takes care of security implementations. I have total of `12 years` of experience out of which around 7 years in bigdata domains. I did get chance to work with big companies like `Apple Inc`, `NBCU`, `SCB` and few more.
 
-I did B.E from Raj. University in I.T (2008). I got good grades and successfully launced social networking website. 
+I have worked in different roles like `DBA`, `Data Engineer`, `Hadoop SRE` and `Solution Consultant`, Which helped me in growing in all the relateable direction of `Solution Architect`.
+
+My Goal is to help people to learn something without wasting time. I try to write as much as simple so that everyone can understand it and use it for their own purpose.
+
+I have a passion of leaning new technologies or learning new things in life, Whenever I get sometime I use it learns something. It doen't matter wether it is related to my technology or profession. It keeps me alive :). 
+
+I always feel, one should write down their thoughts somewhere either on blogs or where they feel comfortable. This will always help you to go back and validate the things you did in the past. You always know where to find the stuff you did and without wasting much time you can refer from these places.
 
 Started my career in 2008 and still eagar to learn new things :).
 
-you can connect with me on [Linkedin](https://www.linkedin.com/in/vikas-srivastava-21060819).
+You can connect with me on [Linkedin](https://www.linkedin.com/in/vikas-srivastava-21060819).
