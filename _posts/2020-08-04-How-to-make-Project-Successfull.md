@@ -1,6 +1,6 @@
 ---
 layout: post
-title: How to make project Successfull
+title: How to make project Successful
 date: 2020-08-04 15:22
 category: [Technology, Skills]
 author: Vikas Srivastava
@@ -8,7 +8,9 @@ tags: [skill, learning, project]
 summary: Best practises for project
 ---
 
-Making a project successful is not an easy task. There are many places where we can screw up the project.
+Making a project successful is not an easy task. There are many points which need to keep in mind while working on any project. I have pointed out some of them, which I think are important for any new project.
+
+## **Points
 
 * **Project goal**
 * **Determine the audience**
@@ -33,11 +35,13 @@ Always try to choose techonology Stack which supports your core component and us
 
 ## **Basic functionality**
 
-Always make Initial version with basic functionality using your core components.It should serve the basic purpose of the project. Take the feedback from the audience who is going to use this Application. This will help you in going into right direction which path you should take.
+Always make Initial version with basic functionality using your core components. It should serve the basic purpose of the project. Take the feedback from the audience who is going to use this Application. This will help you in going into right direction which path you should take.
 
 
 ## **Test it with audience**
 Once you have the initial version with you, Take it to Audience and take the feedback and keep it check if these are already in your list if not remove the uncessory and add the Audience recommendation features.
 
 ## **Iterate the process**
+
+Repeat the process of development and taking the feedback from the audience. Implement the changes and add the new recommended features
 Iterate the process of development w.r.t audience feedback till you make it successfull.
