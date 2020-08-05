@@ -1,6 +1,6 @@
 ---
 layout: post
-title: How to make project Successful
+title: How to make Project Successful 
 date: 2020-08-04 15:22
 category: [Technology, Skills]
 author: Vikas Srivastava
