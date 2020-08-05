@@ -10,7 +10,7 @@ summary: Best practises for project
 
 Making a project successful is not an easy task. There are many points which need to keep in mind while working on any project. I have pointed out some of them, which I think are important for any new project.
 
-## **Points
+### **Points**
 
 * **Project goal**
 * **Determine the audience**
