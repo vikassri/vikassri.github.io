@@ -15,10 +15,10 @@ As we LLAP is Live Long and Process, These are some long living daemons which re
 
 #### **Components:**
 
-- **LLAP Master/AM** : As its name says it's Application master of LLAP daemons
-- **LLAP Daemons**  : Main Daemon process which does most of the heavy lifting like Caching, Jit Optimization, handles IO, Query fragmentation
-- **Hive Interactive Server** : Thrift Server to connect Hive LLAP using jdbc connection
-- **LLAP Query Co-ordinators/Executors** : These are tez Application Master, which accepts the request from user and execute them. They also reside inside LLAP Daemons
+- **LLAP Master/AM** : As its name says it's Application master of LLAP daemons.
+- **LLAP Daemons**  : Main Daemon process which does most of the heavy lifting like Caching, Jit Optimization, handles IO, Query fragmentation.
+- **Hive Interactive Server** : Thrift Server to connect Hive LLAP using jdbc connection.
+- **LLAP Query Co-ordinators/Executors** : These are tez Application Master, which accepts the request from user and execute them. They also reside inside LLAP Daemons.
 
 ![img](../../resource/others/arch.jpg)
 
