@@ -175,12 +175,14 @@ Cluster -> Hbase -> Actions -> Create Root Directory
 ```
 
 **Iniitalize the solr**
+
 Before starting the solr you need to initialise it else it will not start
 ```sh
 Cluster -> CDP-INFRA-SOLR -> Actions -> Initialize Solr
 ```
 
 **Create hive userdir and Warehouse directories**
+
 Creating the hive user directory and warehouse directory for managed and external tables
 ```sh
 Cluster -> Hive -> Actions -> Create Hive User Directory
