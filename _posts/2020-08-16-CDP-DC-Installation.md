@@ -1,6 +1,6 @@
 ---
 layout: post
-title: CDP-DC INSTALLATION
+title: CDP-DC Installation
 date: 2020-08-16 12:57
 category: [Technology, CDP]
 author: Vikas Srivastava
