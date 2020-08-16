@@ -186,7 +186,7 @@ Creating the hive user directory and warehouse directory for managed and externa
 Cluster -> Hive -> Actions -> Create Hive User Directory
 Cluster -> Hive -> Actions -> Create Hive Warehouse Directory
 Cluster -> Hive -> Actions -> Create Hive Warehouse External Directory
-`
+```
 **Enable HA for HDFS**
 
 ```sh
