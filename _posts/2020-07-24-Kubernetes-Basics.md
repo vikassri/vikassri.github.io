@@ -83,5 +83,5 @@ Indetail you can read official document, As per [official document](https://kube
 
 
 ## Installation and Setup On Mac ##
-  [Click Here](https://rominirani.com/tutorial-getting-started-with-kubernetes-with-docker-on-mac-7f58467203fd)
+  [Click Here](https://rominirani.com/tutorial-getting-started-with-kubernetes-with-docker-on-mac-7f58467203fd){:target="_blank"}
 
