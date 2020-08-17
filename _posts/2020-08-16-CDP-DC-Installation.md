@@ -174,7 +174,7 @@ Create the root directory on hdfs for Hbase
 Cluster -> Hbase -> Actions -> Create Root Directory
 ```
 
-**Iniitalize the solr**
+**Initalize the solr**
 
 Before starting the solr you need to initialise it else it will not start
 ```sh
