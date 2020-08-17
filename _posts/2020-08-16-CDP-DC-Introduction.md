@@ -12,59 +12,59 @@ summary: Introduction of Cloudera CDP-DC
 
 Its pretty much similar to CDH, Customer who already worked on CDH will have little more comfort on it than HDP customers. Its consist of below components
 
-###Components
-#### Storage
+### Components
+#### **Storage**
 * HDFS and KUDO
 
-#### Compute
+#### **Compute**
 * YARN
 
-#### Data Access
+#### **Data Access**
 * HIVE/IMPALA
 * DAS/HUE
 
-#### Operationa DB
+#### **Operationa DB**
 * HBASE & PHOENIX
 
-#### Data Science
+#### **Data Science**
 * SPARK & ZEPPELIN
 
-#### Security
+#### **Security**
 * RANGER
 * KERBEROS & TLS
 
-#### Governance
+#### **Governance**
 * ATLAS
 
-#### Job Management
+#### **Job Management**
 * Oozie
 
-#### Streaming
+#### **Streaming**
 * KAFKA
 * SMM (Stream Messaging Manager)
 * SRM (Stream Replication Manager)
 * SR (Schema Registry)
 
-#### Installation
+#### **Installation**
 CDP-DC Installation is pretty much similar to other CDH versions. You need to install Cloudera Manager and add the CDP DC parcels on it. Detailed Installation steps is give [here](../../posts/CDP-DC-Installation)
 
-#### Requirement
+#### **Requirement**
 As many of you already aware public version will come with 6O days trial and Express one you need to buy as binaries are behind paywall.
 
-#### Templates
+#### **Templates**
 CDP-DC comes with many pre-baked templates like below, You can add service on top of these templates or create custom templates as well.
 
-##### Data Engineering
+##### **Data Engineering**
 **Services included** : Spark, Oozie, Hive on Tez, Data Analytics Studio, HDFS, YARN, and YARN Queue Manager.
 
-##### Spark
+##### **Spark**
 **Services included** : Core Configuration, Spark, Oozie, YARN, and YARN Queue Manager.
 
-##### Data Mart
+##### **Data Mart**
 **Services included** : Core Configuration, Impala, and Hue.
 
-##### Streams Messaging (Simple)
+##### **Streams Messaging (Simple)**
 **Services included** : Kafka, Schema Registry, and Zookeeper.
 
-##### Streams Messaging (Full)
+##### **Streams Messaging (Full)**
 **Services included** : Kafka, Schema Registry, Streams Messaging Manager, Streams Replication Manager, Cruise Control, and Zookeeper.
