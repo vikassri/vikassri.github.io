@@ -2,7 +2,7 @@
 layout: post
 title: Improve your Learning Skills
 date: 2020-08-04 14:04
-category: [Techonology, Skills]
+category: [Technology, Skills]
 author: Vikas Srivastava
 tags: [skill, learning]
 summary: I have put down the points to improve your leaning
