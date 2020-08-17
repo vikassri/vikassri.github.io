@@ -51,7 +51,7 @@ CDP-DC Installation is pretty much similar to other CDH versions. You need to in
 #### **Requirement**
 As many of you already aware public version will come with 6O days trial and Express one you need to buy as binaries are behind paywall.
 
-#### **Templates**
+### **Templates**
 CDP-DC comes with many pre-baked templates like below, You can add service on top of these templates or create custom templates as well.
 
 ##### **Data Engineering**
