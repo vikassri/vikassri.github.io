@@ -12,7 +12,7 @@ summary: Introduction of Cloudera CDP-DC
 
 Its pretty much similar to CDH, Customer who already worked on CDH will have little more comfort on it than HDP customers. Its consist of below components
 
-### Components
+### **Components**
 #### **Storage**
 * HDFS and KUDO
 
