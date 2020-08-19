@@ -125,7 +125,7 @@ All you need to do is to provide the `root password` or `private key` of the use
 [root@c1110-node1 ~] systemctl restart cloudera-scm-server
 
 # run on all the nodes (verify if /etc/cloudera-scm-agent/config.ini hostname should be full FDQN)
-systemctl restart cloudera-scm-agents
+systemctl restart cloudera-scm-agent
 ```
 
 After you restart, you might see some error and issues on the node, All you need to do is to restart all the services **one by one** and if any service is not getting start just check the logs and fix it.
@@ -145,7 +145,7 @@ You can see above that we have three options available with us to use. You need 
 ```bash
 Cloudera Manager -> Add Services -> Select Ranger KMS
 ```
-But before that you need to create the dabase for this services using below commands.
+But before that you need to create the dabase for these services using below commands.
 
 ```sql
 # mysql
@@ -157,6 +157,12 @@ CREATE DATABASE rangerkms DEFAULT CHARACTER SET utf8 DEFAULT COLLATE utf8_genera
 GRANT ALL ON rangerkms.* TO 'rangerkms'@'%' IDENTIFIED BY 'Rangerkms@123';
 GRANT ALL ON rangerkms.* TO 'rangerkms'@'localhost' IDENTIFIED BY 'Rangerkms@123';
 
+##If using MySQL:
+SET GLOBAL innodb_file_format=Barracuda;
+SET GLOBAL innodb_file_per_table=1;
+SET GLOBAL innodb_large_prefix=1;
+set @@global.innodb_large_prefix = 1;
+
 # psql
 create database ranger;
 CREATE USER ranger WITH PASSWORD 'Ranger@123';
@@ -167,13 +173,13 @@ CREATE USER rangerkms WITH PASSWORD 'Rangerkms@123';
 GRANT ALL PRIVILEGES ON DATABASE "rangerkms" to rangerkms;
 ```
 
-After installation of Solr/Ranger and RangerKMS our cluster will be like below.
+After installation of Solr, Ranger and RangerKMS our cluster will be like below.
 
 ![all-2](../../resource/cdp/all-2.jpg)
 
 Let again go to security and click on option `Set Up HDFS Data At Rest Encryption`, You will see now it is asking for validation and once you click for validation you need to perform below steps but before doing these step, We need a user with `create key` and `encrypt/decrypt access`. I have created a user `vikas` and given access for above permission using `rangerkms`
 
-Login to ranger url with `rangerkms` / `Ranger@123` and created a new policy under `cm_kms`
+Login to ranger url with `keyadmin` / `Ranger@123` and create a new policy under `cm_kms`.
 
 ![kms-1](../../resource/cdp/kms-1.jpg)
 
