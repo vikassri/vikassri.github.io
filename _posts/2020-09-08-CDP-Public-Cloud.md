@@ -1,6 +1,6 @@
 ---
 layout: post
-title: CDP-Public Cloud Introduction
+title: CDP Public Cloud Introduction
 date: 2020-09-08 10:12
 category: [Technology, CDP]
 author: Vikas Srivastava
