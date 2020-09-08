@@ -40,7 +40,7 @@ Customers who don't want to move to public cloud and using on-premise cluster(CD
 - As CDW is nothing but data warehouse implementaion, which consist of 
   - **Database Catalog** : Base catalog consists of metadata of datalake and if you make any changes to default catalog it refelects to datalake as well. One can create multiple catalogs and attach virtual environment to it. You cannot delete defualt database catalog.
   - **Virtual warehouse** : It is a processing layer on top of catalog, where you run your queries base on catalog metadata/data. It doens't store any data it and runs on kubernetes cluster. As of now you have two kinds of warehouse `Impala` comes with *hue* and `Hive` comes with *hue* and *Das*.
-  - *EventStream Analytics** : Not enabled by default but can asked for it. It works on druid for high speed aggregations and Analytics on time series dataset.
+  - **EventStream Analytics** : Not enabled by default but can asked for it. It works on druid for high speed aggregations and Analytics on time series dataset.
 - Queries run on cloud native containers with kubernetes.
 - Comes with pre-build gafana dashboard. 
 - This is based on underlike Datalake associated with environment.
