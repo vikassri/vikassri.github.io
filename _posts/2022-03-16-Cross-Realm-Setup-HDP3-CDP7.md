@@ -270,4 +270,4 @@ drwxr-xr-x   - hdfs   supergroup          0 2020-09-11 10:01 hdfs://c2110-node1.
 drwxr-xr-x   - hdfs   supergroup          0 2020-09-11 10:02 hdfs://c2110-node1.squadron.support.hortonworks.com/user/yarn
 ```
 
-You are all set to do the data migration.
+## You are all set to do the data migration.
