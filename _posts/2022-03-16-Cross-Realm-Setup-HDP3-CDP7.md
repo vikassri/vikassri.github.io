@@ -81,7 +81,7 @@ restart the services.
 update the kerbero -> Advance Krb-conf -> krb-conf template
 
 
-```bash
+```
 [libdefaults]
   renew_lifetime = 7d
   forwardable = true
@@ -143,7 +143,7 @@ Restart the service and regenerate the keytabs.
 ## validate the krb5.conf on both the clusters
 
 ### HDP Cluster
-```bash
+```
 [libdefaults]
   renew_lifetime = 7d
   forwardable = true
