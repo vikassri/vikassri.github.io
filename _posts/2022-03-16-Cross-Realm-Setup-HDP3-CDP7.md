@@ -31,32 +31,32 @@ CDP Cluster details
 
 # Steps:
 
-## Update /etc/hosts
+## **Update /etc/hosts**
 * Make sure are all hosts from both cluster should be able to ping each other 
 * you can add host from different cluster to each other, like HDP nodes into CDP /etc/hosts file and viceversa.
 
-## Krbtgt principal creation
+## **Krbtgt principal creation**
 * Create required principals on both clusters: password and encryption should be same on both the cluster.
 
-### HDP Cluster::
+### **HDP Cluster**
 ```bash
 kadmin.local -e aes256-cts-hmac-sha1-96,aes128-cts-hmac-sha1-96
 addprinc -pw hadoop krbtgt/CLDR.COM@HWX.COM
 addprinc -pw hadoop krbtgt/HWX.COM@CLDR.COM
 ```
 
-### CDP Cluster:
+### **CDP Cluster**
 ```bash
 kadmin.local -e aes256-cts-hmac-sha1-96,aes128-cts-hmac-sha1-96
 addprinc -pw hadoop krbtgt/CLDR.COM@HWX.COM
 addprinc -pw hadoop krbtgt/HWX.COM@CLDR.COM
 ```
 
-## Update the auth to local rules
+## **Update the auth to local rules**
 Update hadoop local to auth rules to match other cluster principles and to map accrodingly
 Add following rules in hadoop config-->Additional Rules to Map Kerberos Principals to Short Names
 
-### HDP Cluster:
+### **HDP Cluster**
 ```
 RULE:[1:$1@$0](^.*@HWX.COM$)s/^(.*)@HWX.COM$/$1/g
 RULE:[2:$1@$0](^.*@HWX.COM$)s/^(.*)@HWX.COM$/$1/g
@@ -64,19 +64,19 @@ DEFAULT
 {DEFAULT_RULES}
 ```
 
-### CDP Cluster:
+### **CDP Cluster**
 ```
 RULE:[1:$1@$0](^.*@CLDR.COM$)s/^(.*)@CLDR.COM$/$1/g
 RULE:[2:$1@$0](^.*@CLDR.COM$)s/^(.*)@CLDR.COM$/$1/g
 DEFAULT
 ```
 
-## Add trusted realm in CDP cluster
+## **Add trusted realm in CDP cluster**
 ![image](../../resource/cdp/cr.jpg)
 
 restart the services.
 
-## Update krb-conf template in HDP cluster
+## **Update krb-conf template in HDP cluster**
 
 update the below line if doesnt exists at kerberos -> Advance Krb-conf -> krb-conf template
 
@@ -118,9 +118,9 @@ update the below line if doesnt exists at kerberos -> Advance Krb-conf -> krb-co
 
 Restart the service and regenerate the keytabs.
 
-## validate the krb5.conf on both the clusters
+## **validate the krb5.conf on both the clusters**
 
-### HDP Cluster
+### **HDP Cluster**
 ```
 [libdefaults]
   renew_lifetime = 7d
@@ -155,7 +155,7 @@ Restart the service and regenerate the keytabs.
    CLDR.COM = .
 }
 ```
-### CDP Cluster
+### **CDP Cluster**
 
 ```bash
 [libdefaults]
@@ -191,31 +191,31 @@ hortonworks.com = HWX.COM
 }
 ```
 
-## Verify to test the auth to local rules
+## **Verify to test the auth to local rules**
 
 Verify hadoop local to auth rules
-### HDP Cluster
+### **HDP Cluster**
 ```bash
 [hdfs@ccycloud-1 ~]$ hadoop org.apache.hadoop.security.HadoopKerberosName hdfs/ccycloud-1.cdpdcdaas.root.hwx.site@HWX.COM
 Name: hdfs/ccycloud-1.cdpdcdaas.root.hwx.site@HWX.COM to hdfs
 ```
-### CDP Cluster
+### **CDP Cluster**
 ```bash
 [hdfs@ccycloud-3 ~]$ hadoop org.apache.hadoop.security.HadoopKerberosName hdfs/ccycloud-1.cdpdc.root.hwx.site@CLDR.COM
 Name: hdfs/ccycloud-1.cdpdc.root.hwx.site@CLDR.COM to hdfs
 ```
 
-## Verify the Access to other cluster
+## **Verify the Access to other cluster**
 
 verify if you can run test queries from cluster A to cluster B and vice versa
 
-### To debug just add 
+### **To debug just add**
 ```bash
 export HADOOP_CLIENT_OPTS="-Dsun.security.krb5.debug=true"
 export HADOOP_ROOT_LOGGER=DEBUG,console
 ```
 
-### Running hdfs commands in HDP cluster from CDP Cluster:
+### **Running hdfs commands in HDP cluster from CDP Cluster**
 kinit the user and run the below commands
 ```bash
 [hdfs@ccycloud-1 ~]$ hdfs dfs -ls hdfs://ccycloud-1.cdpdcdaas.root.hwx.site/user
@@ -233,7 +233,7 @@ drwxr-xr-x   - hdfs           supergroup              0 2020-09-22 11:44 hdfs://
 drwxr-xr-x   - hdfs           supergroup              0 2020-07-31 03:36 hdfs://ccycloud-1.cdpdcdaas.root.hwx.site/user/yarn
 ```
 
-### Running hdfs commands in CDP cluster from HDP Cluster :
+### **Running hdfs commands in CDP cluster from HDP Cluster**
 kinit the user and run the below commands
 ```bash
 [hdfs@ccycloud-3 ~]$ hdfs dfs -ls hdfs://c2110-node1.squadron.support.hortonworks.com/user
