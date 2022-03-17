@@ -78,8 +78,7 @@ restart the services.
 
 ## Update krb-conf template in HDP cluster
 
-update the kerbero -> Advance Krb-conf -> krb-conf template
-
+update the below line if doesnt exists at kerberos -> Advance Krb-conf -> krb-conf template
 
 ```
 [libdefaults]
@@ -103,27 +102,6 @@ update the kerbero -> Advance Krb-conf -> krb-conf template
   default = FILE:/var/log/krb5kdc.log
   admin_server = FILE:/var/log/kadmind.log
   kdc = FILE:/var/log/krb5kdc.log
-
-[realms]
-  {{realm}} = {
-{%- if master_kdc %}
-    master_kdc = {{master_kdc|trim()}}
-{%- endif -%}
-{%- if kdc_hosts > 0 -%}
-{%- set kdc_host_list = kdc_hosts.split(',')  -%}
-{%- if kdc_host_list and kdc_host_list|length > 0 %}
-    admin_server = {{admin_server_host|default(kdc_host_list[0]|trim(), True)}}
-{%- if kdc_host_list -%}
-{%- if master_kdc and (master_kdc not in kdc_host_list) %}
-    kdc = {{master_kdc|trim()}}
-{%- endif -%}
-{% for kdc_host in kdc_host_list %}
-    kdc = {{kdc_host|trim()}}
-{%- endfor -%}
-{% endif %}
-{%- endif %}
-{%- endif %}
-  }
 
 {# Append additional realm declarations below #}
   CLDR.COM = {
