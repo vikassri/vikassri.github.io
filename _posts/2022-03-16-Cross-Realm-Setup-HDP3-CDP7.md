@@ -38,14 +38,14 @@ CDP Cluster details
 ## **Krbtgt principal creation**
 * Create required principals on both clusters: password and encryption should be same on both the cluster.
 
-### **HDP Cluster**
+#### **HDP Cluster**
 ```bash
 kadmin.local -e aes256-cts-hmac-sha1-96,aes128-cts-hmac-sha1-96
 addprinc -pw hadoop krbtgt/CLDR.COM@HWX.COM
 addprinc -pw hadoop krbtgt/HWX.COM@CLDR.COM
 ```
 
-### **CDP Cluster**
+#### **CDP Cluster**
 ```bash
 kadmin.local -e aes256-cts-hmac-sha1-96,aes128-cts-hmac-sha1-96
 addprinc -pw hadoop krbtgt/CLDR.COM@HWX.COM
@@ -56,7 +56,7 @@ addprinc -pw hadoop krbtgt/HWX.COM@CLDR.COM
 Update hadoop local to auth rules to match other cluster principles and to map accrodingly
 Add following rules in hadoop config-->Additional Rules to Map Kerberos Principals to Short Names
 
-### **HDP Cluster**
+#### **HDP Cluster**
 ```
 RULE:[1:$1@$0](^.*@HWX.COM$)s/^(.*)@HWX.COM$/$1/g
 RULE:[2:$1@$0](^.*@HWX.COM$)s/^(.*)@HWX.COM$/$1/g
@@ -64,7 +64,7 @@ DEFAULT
 {DEFAULT_RULES}
 ```
 
-### **CDP Cluster**
+#### **CDP Cluster**
 ```
 RULE:[1:$1@$0](^.*@CLDR.COM$)s/^(.*)@CLDR.COM$/$1/g
 RULE:[2:$1@$0](^.*@CLDR.COM$)s/^(.*)@CLDR.COM$/$1/g
@@ -120,7 +120,7 @@ Restart the service and regenerate the keytabs.
 
 ## **validate the krb5.conf on both the clusters**
 
-### **HDP Cluster**
+#### **HDP Cluster**
 ```
 [libdefaults]
   renew_lifetime = 7d
@@ -155,7 +155,7 @@ Restart the service and regenerate the keytabs.
    CLDR.COM = .
 }
 ```
-### **CDP Cluster**
+#### **CDP Cluster**
 
 ```bash
 [libdefaults]
@@ -194,12 +194,12 @@ hortonworks.com = HWX.COM
 ## **Verify to test the auth to local rules**
 
 Verify hadoop local to auth rules
-### **HDP Cluster**
+#### **HDP Cluster**
 ```bash
 [hdfs@ccycloud-1 ~]$ hadoop org.apache.hadoop.security.HadoopKerberosName hdfs/ccycloud-1.cdpdcdaas.root.hwx.site@HWX.COM
 Name: hdfs/ccycloud-1.cdpdcdaas.root.hwx.site@HWX.COM to hdfs
 ```
-### **CDP Cluster**
+#### **CDP Cluster**
 ```bash
 [hdfs@ccycloud-3 ~]$ hadoop org.apache.hadoop.security.HadoopKerberosName hdfs/ccycloud-1.cdpdc.root.hwx.site@CLDR.COM
 Name: hdfs/ccycloud-1.cdpdc.root.hwx.site@CLDR.COM to hdfs
@@ -209,7 +209,7 @@ Name: hdfs/ccycloud-1.cdpdc.root.hwx.site@CLDR.COM to hdfs
 
 verify if you can run test queries from cluster A to cluster B and vice versa
 
-### **To debug just add**
+#### **To debug just add**
 ```bash
 export HADOOP_CLIENT_OPTS="-Dsun.security.krb5.debug=true"
 export HADOOP_ROOT_LOGGER=DEBUG,console
