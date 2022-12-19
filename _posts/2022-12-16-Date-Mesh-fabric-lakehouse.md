@@ -1,6 +1,6 @@
 ---
 title: Data Fabric, Data Mesh & Data Lakehouse
-date: 2022-14-16 14:33
+date: 2022-04-16 14:33
 author: Vikas Srivastava
 category: [Data lake, Data Mesh, Data Fabric]
 tags: [Data]
