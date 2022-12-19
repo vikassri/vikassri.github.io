@@ -1,5 +1,5 @@
 ---
-title: File and RDBMS to kudu using pyspark
+title: Extract data from File & RDBMS to kudu using pyspark
 date: 2022-07-18 12:33
 author: Vikas Srivastava
 category: [pyspark]
