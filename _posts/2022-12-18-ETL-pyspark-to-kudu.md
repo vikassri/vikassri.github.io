@@ -27,8 +27,10 @@ spark = SparkSession.builder.appName("InsertIntoKudu").getOrCreate()
 # Read the CSV file
 df = spark.read.csv("path/to/file.csv", header=True)
 
+kudu_options = {'kudu.master':'master1:port', 'kudu.table': 'impala::demo.customer_demo_kudu'}
+
 # Insert the data into Kudu
-df.write.format("kudu").mode("append").option("kudu.master", "kudu-master-host:7051").save()
+df.write.format("kudu").mode("append").options(**kudu_options).save()
 ```
 
 In the above example, we create a SparkSession and read the CSV file using the `read.csv` method. Then, we use the `write` method to insert the data into Kudu using the `kudu` format. The `mode` option specifies whether to append the data to the existing data in Kudu or overwrite it. The `option` method is used to set the Kudu master host and port.
@@ -39,15 +41,29 @@ To extract data from an RDBMS, we can use the jdbc method of the SparkSession to
 ```python
 from pyspark.sql import SparkSession
 
+# define variable
+kudu_master = "ccycloud.cdp.root.hwx.site"
+table_name = "demo.customer_demo_kudu"
+# table_name = "impala::demo.customer_demo_kudu" # if interagtion between kudu and imapala is not there
+
 # Create a SparkSession
 spark = SparkSession.builder.appName("InsertIntoKudu").getOrCreate()
 
 # Read the data from MySQL using the JDBC connector
 df = spark.read.format("jdbc").option("url", "jdbc:mysql://mysql-host:3306/dbname").option("driver", "com.mysql.cj.jdbc.Driver").option("dbtable", "tablename").option("user", "username").option("password", "password").load()
 
-# Insert the data into Kudu
-df.write.format("kudu").mode("append").option("kudu.master", "kudu-master-host:7051").save()
+# kudu options
+kudu_options = {'kudu.master':kudu_master, 'kudu.table': table_name}
 
+# Insert the data into Kudu
+df.write.format("kudu").mode("append").options(**kudu_options).save()
 ```
 
 In the above example, we use the `read.format` method to read the data from MySQL using the JDBC connector. The option method is used to pass the rdbms details along with driver and database name.
+
+```shell
+# python version: 3.7 as its doesnt work on 3.8 or 9
+# scala version: 2.11
+# If secured take a do the kinit first before running the script
+spark-submit --jars /opt/cloudera/parcels/CDH/lib/kudu/kudu-spark2_2.11.jar kudu_spark.py 
+```
