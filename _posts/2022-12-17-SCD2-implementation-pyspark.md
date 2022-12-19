@@ -1,6 +1,6 @@
 ---
 title: SCD2 Implementation in pyspark
-date: 2022-12-17 12:33
+date: 2022-06-17 12:33
 author: Vikas Srivastava
 category: [pyspark]
 tags: [scd2 type]

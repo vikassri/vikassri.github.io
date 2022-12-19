@@ -1,6 +1,6 @@
 ---
 title: File and RDBMS to kudu using pyspark
-date: 2022-12-18 12:33
+date: 2022-07-18 12:33
 author: Vikas Srivastava
 category: [pyspark]
 tags: [ETL type]
