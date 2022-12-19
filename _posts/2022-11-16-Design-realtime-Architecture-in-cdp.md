@@ -1,4 +1,3 @@
-
 ---
 title: Designing A realtime architecture using CDP 
 date: 2021-12-18 12:33
