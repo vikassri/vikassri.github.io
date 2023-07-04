@@ -17,6 +17,9 @@
   filename: 'CDP-Public-Cloud'
   lastmod: '2020-09-08 10:47:30 +0530'
 -
+  filename: 'Realtime-Architecture-in-CDH'
+  lastmod: '2022-12-19 13:54:23 +0800'
+-
   filename: 'Kubernetes-Basics'
   lastmod: '2020-08-17 17:26:00 +0530'
 -
@@ -29,11 +32,20 @@
   filename: 'lockdown'
   lastmod: '2020-07-24 17:11:39 +0530'
 -
+  filename: 'Date-Mesh-fabric-lakehouse'
+  lastmod: '2022-12-19 14:06:43 +0800'
+-
   filename: 'CDP-DC-Introduction'
   lastmod: '2020-08-17 17:20:14 +0530'
 -
   filename: 'llap-config'
   lastmod: '2020-08-06 14:20:15 +0530'
+-
+  filename: 'SCDimplementation-pyspark'
+  lastmod: '2022-12-19 14:02:59 +0800'
+-
+  filename: 'ETL-pyspark-to-kudu'
+  lastmod: '2022-12-19 17:49:20 +0800'
 -
   filename: 'CDP-Private-Cloud'
   lastmod: '2020-09-08 10:46:33 +0530'
@@ -44,5 +56,11 @@
   filename: 'nifi-rdbms-to-hbase'
   lastmod: '2020-07-24 17:11:39 +0530'
 -
+  filename: 'Design-realtime-Architecture-in-cdp'
+  lastmod: '2022-12-19 14:02:59 +0800'
+-
   filename: 'OpenCV-Basics'
   lastmod: '2020-07-24 17:11:39 +0530'
+-
+  filename: 'Cross-Realm-Setup-HDPCDP7'
+  lastmod: '2022-03-17 11:31:10 +0800'
