@@ -16,4 +16,4 @@ I always feel, one should write down their thoughts somewhere either on blogs or
 
 Started my career in 2008 and still eagar to learn new things :).
 
-You can connect with me on [Linkedin](https://www.linkedin.com/in/vikas-srivastava-21060819).
+You can connect with me on [Linkedin](https://www.linkedin.com/in/ervikassri).
