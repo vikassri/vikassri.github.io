@@ -59,13 +59,13 @@ In the code above, we pass the input text to the translate function provided by 
 ### **6. Fine-Tuning a Language Model** ### 
 If you have a specific language translation task that is not covered by pre-trained models, you can fine-tune a language model using your own data. Fine-tuning allows you to adapt the model to your specific requirements. Here are the general steps for fine-tuning:
 
-* Prepare the Dataset: Gather a parallel corpus of texts in the source and target languages. Ensure that the data is properly aligned.
+* **Prepare the Dataset**: Gather a parallel corpus of texts in the source and target languages. Ensure that the data is properly aligned.
 
-* Tokenization and Encoding: Tokenize the texts and encode them using the Huggingface tokenizer. Create input-output pairs for the translation task.
+* **Tokenization and Encoding**: Tokenize the texts and encode them using the Huggingface tokenizer. Create input-output pairs for the translation task.
 
-* Model Training: Fine-tune the language model using the encoded data. You can use techniques like transfer learning to speed up the training process.
+* **Model Training**: Fine-tune the language model using the encoded data. You can use techniques like transfer learning to speed up the training process.
 
-* Evaluation: Evaluate the performance of your fine-tuned model on a validation dataset. Calculate metrics such as BLEU score to assess the quality of translations.
+* **Evaluation**: Evaluate the performance of your fine-tuned model on a validation dataset. Calculate metrics such as BLEU score to assess the quality of translations.
 
 ### **7. Evaluating the Performance** ### 
 After translating text using Langchain and Huggingface, it is essential to evaluate the performance of the translation. One popular metric for translation quality is the BLEU score. BLEU measures the overlap between the machine-translated text and one or more human reference translations. The higher the BLEU score, the better the translation quality.
@@ -75,10 +75,13 @@ To evaluate the performance of your translation, you can use the sacrebleu libra
 ### **8. Best Practices and Tips** ### 
 When using Langchain with Huggingface, consider the following best practices:
 
-* Data Quality: High-quality training data is crucial for obtaining accurate translations. Ensure that your training dataset is clean, properly aligned, and representative of the target language.
+* **Data Quality**: High-quality training data is crucial for obtaining accurate translations. Ensure that your training dataset is clean, properly aligned, and representative of the target language.
 
-* Model Selection: Choose the appropriate pre-trained model for your translation task. Consider factors such as language pair, domain specificity, and available computational resources.
+* **Model Selection**: Choose the appropriate pre-trained model for your translation task. Consider factors such as language pair, domain specificity, and available computational resources.
 
-* Fine-Tuning: If the pre-trained models do not meet your requirements, consider fine-tuning a language model on your specific dataset. Fine-tuning allows you to improve the translation quality for your specific task.
+* **Fine-Tuning**: If the pre-trained models do not meet your requirements, consider fine-tuning a language model on your specific dataset. Fine-tuning allows you to improve the translation quality for your specific task.
 
-* Performance Optimization: For large-scale translation tasks, you may need to optimize the inference speed of the translation model. Techniques like batching, model quantization, and model pruning can be applied to improve performance.
+* **Performance Optimization**: For large-scale translation tasks, you may need to optimize the inference speed of the translation model. Techniques like batching, model quantization, and model pruning can be applied to improve performance.
+
+
+I hope you liked it, Happy Learning :)
