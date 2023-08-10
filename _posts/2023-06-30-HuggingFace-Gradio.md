@@ -1,5 +1,5 @@
 ---
-title: Implement a Huggingface with Gradio - A Step-by-Step Guide  
+title: Implement a Huggingface Model with Gradio - A Step-by-Step Guide  
 date: 2023-06-30 11:33
 author: Vikas Srivastava
 category: [Deep Learning, HuggingFaceHub, Gradio]
@@ -7,7 +7,7 @@ tags: [LLM, HuggingFaceHub]
 summary: This blogs is about implementing the hugging face model with gradio on Mac
 ---
 
-Hi All, I will be implementing the [huggingface](https://huggingface.co/) model with [gradio](https://www.gradio.app/) app. I will be using downloading the huggingface model using python script and then using the same model to implement in gradio.
+Hi All, I will be implementing the [huggingface](https://huggingface.co/) model with [gradio](https://www.gradio.app/) app. First, I will download the huggingface model using python script and then use the same model in gradio.
 
 ## Download the model
 Here is the python script to download the huggingface model
@@ -24,12 +24,12 @@ def download_model(model_id):
         "special_tokens_map.json", "spiece.model", "tokenizer_config.json"]
 
     for filename in filenames:
-        downloaded_model_path = hf_hub_download(
+        model_path = hf_hub_download(
             repo_id=model_id,
             filename=filename,
             token="HUGGINGFACEHUB_API_TOKEN"
         )
-        print("Downloaded model file:", downloaded_model_path)
+        print("Downloaded model file:", model_path)
 
 # main 
 if __name__=='__main__':
@@ -40,7 +40,7 @@ if __name__=='__main__':
 Above model will be downloaded into the ~/.cache folder by default, HF will use the model from this cache dirctory.
 
 ## Usage
-Here is the sample python code for 
+Here is the sample python code for running the model with gradio.
 
 ```python
 from langchain.llms import HuggingFacePipeline
@@ -75,7 +75,7 @@ iface = gr.Interface(ask_question, inputs=gr.Textbox(lines=2, placeholder="Quest
 iface.launch(server_port=8081)
 ```
 
-execute this code as below
+Now execute the script to start the gradio app, you can also publish it publically by updating `launch(share=true)`
 
 ```shell
 gradio app.py
