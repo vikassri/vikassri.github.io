@@ -7,7 +7,7 @@ tags: [LLM, HuggingFaceHub]
 summary: Creating a chatbot using HF model
 ---
 
-Hello Readers, Today i will be write blog to create a sample chatbot in few lines of code, I have previously wrote a blog about implementing the Huggingface model with gradio, it contains the method of downloading the model from huggingfacehub and use it.
+Hello Readers, Today i will a write blog oh how to create a sample chatbot in few lines of code, I have previously wrote a blog about implementing the Huggingface model with gradio, it contains the method of downloading the model from huggingfacehub and use it.
 
 In this blog i will be using the same model to implement the chatbot in gradio.
 
