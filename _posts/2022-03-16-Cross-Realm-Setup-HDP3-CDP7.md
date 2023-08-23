@@ -38,14 +38,14 @@ CDP Cluster details
 ## **Krbtgt principal creation**
 * Create required principals on both clusters: password and encryption should be same on both the cluster.
 
-#### **HDP Cluster**
+#### **CDP Cluster**
 ```bash
 kadmin.local -e aes256-cts-hmac-sha1-96,aes128-cts-hmac-sha1-96
 addprinc -pw hadoop krbtgt/CLDR.COM@HWX.COM
 addprinc -pw hadoop krbtgt/HWX.COM@CLDR.COM
 ```
 
-#### **CDP Cluster**
+#### **HDP Cluster**
 ```bash
 kadmin.local -e aes256-cts-hmac-sha1-96,aes128-cts-hmac-sha1-96
 addprinc -pw hadoop krbtgt/CLDR.COM@HWX.COM
@@ -54,9 +54,9 @@ addprinc -pw hadoop krbtgt/HWX.COM@CLDR.COM
 
 ## **Update the auth to local rules**
 Update hadoop local to auth rules to match other cluster principles and to map accrodingly
-Add following rules in hadoop config-->Additional Rules to Map Kerberos Principals to Short Names
+Add following rules in CORE_SETTINGS-1 / hadoop config-->Additional Rules to Map Kerberos Principals to Short Names
 
-#### **HDP Cluster**
+#### **CDP Cluster**
 ```
 RULE:[1:$1@$0](^.*@HWX.COM$)s/^(.*)@HWX.COM$/$1/g
 RULE:[2:$1@$0](^.*@HWX.COM$)s/^(.*)@HWX.COM$/$1/g
@@ -64,7 +64,7 @@ DEFAULT
 {DEFAULT_RULES}
 ```
 
-#### **CDP Cluster**
+#### **HDP Cluster**
 ```
 RULE:[1:$1@$0](^.*@CLDR.COM$)s/^(.*)@CLDR.COM$/$1/g
 RULE:[2:$1@$0](^.*@CLDR.COM$)s/^(.*)@CLDR.COM$/$1/g
@@ -218,7 +218,7 @@ export HADOOP_ROOT_LOGGER=DEBUG,console
 ### **Running hdfs commands in HDP cluster from CDP Cluster**
 kinit the user and run the below commands
 ```bash
-[hdfs@ccycloud-1 ~]$ hdfs dfs -ls hdfs://ccycloud-1.cdpdcdaas.root.hwx.site/user
+[hdfs@c2110-node1 ~]$ hdfs dfs -ls hdfs://ccycloud-1.cdpdcdaas.root.hwx.site/user
 Found 11 items
 drwxr-xr-x   - hdfs           supergroup              0 2020-08-19 05:30 hdfs://ccycloud-1.cdpdcdaas.root.hwx.site/user/hdfs
 drwxrwxrwx   - mapred         hadoop                  0 2020-07-31 03:37 hdfs://ccycloud-1.cdpdcdaas.root.hwx.site/user/history
