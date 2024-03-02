@@ -1,75 +1,39 @@
 ---
-title: Chatbot by using Huggingface Model with Gradio
-date: 2023-07-13 23:33
+title: Building End-to-End Generative AI Applications with Large Language Models (LLMs)
+date: 2024-01-10 23:30
 author: Vikas Srivastava
-category: [Deep Learning, HuggingFaceHub, Gradio, chatbot]
-tags: [LLM, HuggingFaceHub]
-summary: Creating a chatbot using HF model
+category: [Deep Learning, GenAI, LLM]
+tags: [LLM, GenAI]
+summary: Life Cycle of GenAI Application
 ---
 
-Hello Readers, Today i will a write blog oh how to create a sample chatbot in few lines of code, I have previously wrote a blog about implementing the Huggingface model with gradio, it contains the method of downloading the model from huggingfacehub and use it.
+Hello Readers, Today i will a write blog on building end-to-end GenAI application with LLM.
 
-In this blog i will be using the same model to implement the chatbot in gradio.
+## Understanding the Building Blocks
+To build robust LLM-powered applications, you need to consider several key components:
 
-## setup
-Download the model using the python script given in the previous blog, check out the [blog](https://www.vikassri.com/posts/HuggingFace-Gradio/)
+![image](../../resource/others/genai.png)
 
-Once you download the same model, you can check the mode and its file under .cache folder in your home directory, It about 6.2 GB in total.
+### *1. Infrastructure Layer*
 
-```shell
-vikassrivastava@vikasmac ~$ ll  ~/.cache/huggingface/                                                                                                                                         
-total 8
-drwxr-xr-x  19 vikassrivastava  staff   608B Aug 10 20:01 hub
-drwxr-xr-x   4 vikassrivastava  staff   128B Jul  2 16:14 modules
--rw-r--r--   1 vikassrivastava  staff    37B Jul 11 17:14 token
-vikassrivastava@vikasmac ~$ du -sh  ~/.cache/huggingface/hub/models--lmsys--fastchat-t5-3b-v1.0                                                                                               
-6.2G    /Users/vikassrivastava/.cache/huggingface/hub/models--lmsys--fastchat-t5-3b-v1.0                    
-```
-## Code
-Here is the sample python code to use it 
+The foundation of any LLM-powered application lies in its infrastructure layer. This layer provides the necessary compute, storage, and network resources to serve up LLMs and host application components. You can choose to leverage on-premises infrastructure or opt for on-demand cloud services, offering scalability and flexibility.
 
-```python
-import gradio as gr
-from langchain.llms import HuggingFacePipeline
-from langchain import PromptTemplate, LLMChain
+### *2. Large Language Models*
+Central to your application are the LLMs themselves. These models, including foundation models and task-specific adaptations, are deployed on the chosen infrastructure to fulfill inference requirements. Depending on the application's needs, you may prioritize real-time or near-real-time interactions with the model.
 
-def ask_question(question, history):
-    model_id = "lmsys/fastchat-t5-3b-v1.0"
-    llm = HuggingFacePipeline.from_model_id(model_id=model_id, task="text2text-generation",
-        model_kwargs={"temperature": 0, "max_length": 1000})
+### *3. Data Retrieval and Integration*
+In many cases, applications require access to external data sources. This could involve retrieving information discussed in the retrieval augmented generation section. Integrating such data seamlessly into your application enhances its capabilities and enriches user experiences.
 
-    # define template 
-    template = """
-    You are a friendly chatbot assistant that responds conversationally to users' questions.
-    Keep the answers short, unless specifically asked by the user to elaborate on something.
+### *4. Output Management and Feedback Mechanisms*
+Efficient management of model outputs is crucial for enhancing application performance. Implementing mechanisms to capture, store, and analyze user completions can augment the effectiveness of LLMs over time. Additionally, gathering user feedback facilitates continuous refinement and improvement of the application.
 
-    Question: {question}
+### *5. Tools and Frameworks*
+Various tools and frameworks are available to simplify the implementation of LLM techniques discussed in this lesson. For instance, len chains built-in libraries facilitate the integration of advanced techniques like power react or chain of thought prompting. Model hubs offer centralized management and sharing of models, streamlining the development process.
 
-    Answer:"""
+### *6. User Interface and Security*
+The final layer of your application encompasses the user interface and security components. Whether it's a website or a REST API, this layer serves as the interface through which users interact with the application. Implementing robust security measures is essential to safeguard user data and ensure secure interactions.
 
-    # create prompt
-    prompt = PromptTemplate(template=template, input_variables=["question"])
+### *Conclusion*
+In conclusion, building end-to-end generative AI applications with LLMs requires careful consideration of various components across the architecture stack. By integrating infrastructure, models, data, tools, and security measures effectively, developers can create powerful and intuitive applications. As we've seen throughout this lesson, LLMs hold immense potential as reasoning engines, driving innovation across diverse domains. With frameworks like len chain, developers can expedite the development, deployment, and testing of LLM-powered applications, ushering in an exciting era of AI-driven innovation.
 
-    # llm chain
-    llm_chain = LLMChain(prompt=prompt,llm=llm)
-
-    result = llm_chain(question)
-    return result['text'].replace("<pad>","")
-
-
-if __name__=='__main__':
-    demo = gr.ChatInterface(ask_question)
-    demo.launch()
-```
-
-## Demo
-
-Launch the gradio app by using below command
-```shell
-gradio app.py
-```
-Now you can chat with your model like below
-
-![image](../../resource/others/chat.jpeg)
-
-Happy Leaning !!!
+*Stay curious. Stay innovative. Happy coding!*
