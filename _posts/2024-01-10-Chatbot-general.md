@@ -13,7 +13,7 @@ Hello Readers, Today i will a write blog on building end-to-end GenAI applicatio
 To build robust LLM-powered applications, you need to consider several key components:
 
 ![image](../../resource/others/genai.png)
-<p>img source: Coursera<p>
+#### img source: Coursera
 
 ### 1. Infrastructure Layer
 
