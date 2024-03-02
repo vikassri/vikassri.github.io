@@ -3,7 +3,7 @@
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 title: Vikas Srivastava # the main title
 
-tagline: Data & AI Archiect # it will display as the sub-title
+tagline: Data & AI Architect # it will display as the sub-title
 
 description: >- # used by seo meta and the atom feed
   A minimal, portfolio, sidebar,
