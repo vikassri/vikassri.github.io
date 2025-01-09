@@ -83,7 +83,7 @@ knowledge_base.load(upsert=True)
 
 Once the knowledge base is ready, we can create an AI agent that uses a language model to answer user queries. The agent will use the knowledge base for context-aware responses.
 
-```Python
+```python
 from phi.agent import Agent
 from phi.model.openai import OpenAIChat
 
@@ -118,14 +118,14 @@ Here’s what you can expect when querying the agent:
 **Query**:
 How do I make chicken and galangal in coconut milk soup?
 
-![alt text](<../../resource/others/deltalake.png>)
+![alt text](<../resource/others/deltalake.jpg>)
 
 
 **Query**:
 What is deltalake?
 
 **Response**:
-![alt text](<../../resource/others/deltalake.png>)
+![alt text](<../resource/others/deltalake.jpg>)
 
 **Conclusion**
 
