@@ -32,7 +32,7 @@ The knowledge bases are backed by a **pgvector** database, which performs simila
 
 Here’s the code to set up both knowledge bases:
 
-### Run the postgres docker for knowled base database
+#### Run the postgres docker for vector database
 ```bash
 docker run -d 
   -e POSTGRES_DB=ai 
@@ -44,12 +44,12 @@ docker run -d
   --name pgvector 
   phidata/pgvector:16
 ```
-### Install the required python libraries
+#### Install the required python libraries
 
 ```bash
 pip install phidata -U pgvector pypdf "psycopg[binary]" sqlalchemy
 ```
-###  Python code for knowledgebase
+####  Python code for knowledgebase
 ```python
 from phi.knowledge.pdf import PDFUrlKnowledgeBase, PDFKnowledgeBase
 from phi.vectordb.pgvector import PgVector, SearchType
@@ -85,7 +85,7 @@ knowledge_base.load(upsert=True)
 
 Once the knowledge base is ready, we can create an AI agent that uses a language model to answer user queries. The agent will use the knowledge base for context-aware responses.
 
-### Python code for creating an agent and getting response
+#### Python code for creating an agent and getting response
 ```python
 from phi.agent import Agent
 from phi.model.openai import OpenAIChat
@@ -115,7 +115,7 @@ kb_agent.print_response("What is deltalake?", stream=True)
 2.	Run the script. On the first run, the PDF knowledge bases will be loaded, and embeddings will be created in the database.
 3.	Once the knowledge bases are loaded, you can interact with the AI agent by asking questions.
 
-### Sample Output
+#### Sample Output
 Here’s what you can expect when querying the agent:
 
 **Query**:
