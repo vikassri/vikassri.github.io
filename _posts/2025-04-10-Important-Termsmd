@@ -95,6 +95,12 @@ When deploying LLMs at scale, these performance concepts matter:
 - **Tool Use:** Letting an LLM call external tools (e.g., calculator, database, web search) to improve capabilities.
 
 ---
+## 🏗️ Typical LLM Application Architecture
+
+Here’s a visual snapshot of a modern LLM-powered app, combining memory, embeddings, and external tools using a Retrieval-Augmented Generation (RAG) approach:
+
+![LLM Architecture](../resource/others/llm.png)
+
 
 ### Flow Overview:
 
