@@ -40,7 +40,7 @@ Instead of full model training, use PEFT methods like **LoRA** and **QLoRA**:
 * **LoRA**: Introduces small trainable adapters.
 * **QLoRA**: Fine-tune models in 4-bit precision to drastically reduce memory usage.
 
-🔧 Libraries:
+#### Libraries:
 
 * [PEFT (Hugging Face)](https://github.com/huggingface/peft)
 * [QLoRA Guide](https://huggingface.co/blog/4bit-transformers-bitsandbytes)
@@ -51,7 +51,7 @@ Use quantization to reduce memory and compute requirements for inference.
 
 * **GPTQ**, **AWQ**, or **BitsAndBytes** can quantize models to 8-bit or 4-bit.
 
-🛠 Tools:
+#### Tools:
 
 * [GPTQ](https://github.com/IST-DASLab/gptq)
 * [BitsAndBytes](https://github.com/TimDettmers/bitsandbytes)
@@ -60,13 +60,13 @@ Use quantization to reduce memory and compute requirements for inference.
 
 If you don't need the model to "know" your data, consider **Retrieval-Augmented Generation (RAG)** instead of fine-tuning.
 
-RAG lets you:
+#### RAG lets you:
 
 * Use embeddings to index documents
 * Feed retrieved content into prompts
 * Keep data separate from model weights
 
-🧰 Tools:
+#### Tools:
 
 * [LangChain](https://www.langchain.com/)
 * [LlamaIndex](https://www.llamaindex.ai/)
@@ -89,26 +89,26 @@ RAG lets you:
 
 ## Best Practices for On-Prem Model Training
 
-### ✅ Choose the Right Hardware
+### Choose the Right Hardware
 
 * A single **A100** or **RTX 4090** can fine-tune most 7B models.
 * Use consumer GPUs with QLoRA for budget setups.
 
-### ✅ Use Containers or Virtual Environments
+### Use Containers or Virtual Environments
 
 * Use Docker or Conda to isolate dependencies and simplify deployment.
 * Reproducibility is crucial in shared environments.
 
-### ✅ Track Your Experiments
+### Track Your Experiments
 
 * Use [MLflow](https://mlflow.org/) or [Weights & Biases](https://wandb.ai/) to log runs, hyperparameters, and metrics.
 
-### ✅ Regular Checkpointing
+### Regular Checkpointing
 
 * Save checkpoints frequently to prevent data loss.
 * Especially important when training long jobs without a dedicated job scheduler.
 
-### ✅ Start with RAG Before Fine-Tuning
+### Start with RAG Before Fine-Tuning
 
 * If your use case can be solved via **semantic search + summarization**, try RAG first. It's cheaper and often just as effective.
 
